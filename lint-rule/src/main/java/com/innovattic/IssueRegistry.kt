@@ -20,7 +20,7 @@ class IssueRegistry : IssueRegistry() {
                 explanation = MULTIPLE_SYNTHETIC_IMPORT_MESSAGE,
                 category = Category.CORRECTNESS,
                 priority = 6,
-                severity = Severity.WARNING,
+                severity = Severity.ERROR,
                 implementation = Implementation(MultipleSyntheticImportDetector::class.java, Scope.JAVA_FILE_SCOPE)
         )
     }
