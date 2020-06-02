@@ -1,8 +1,8 @@
-package com.innovattic
+package com.innovattic.lint.multiplesyntheticimport
 
 import com.android.tools.lint.client.api.IssueRegistry
 import com.android.tools.lint.detector.api.*
-import com.innovattic.MultipleSyntheticImportDetector.Companion.MULTIPLE_SYNTHETIC_IMPORT_MESSAGE
+import com.innovattic.lint.multiplesyntheticimport.MultipleSyntheticImportDetector.Companion.MULTIPLE_SYNTHETIC_IMPORT_MESSAGE
 
 @Suppress("UnstableApiUsage")
 class IssueRegistry : IssueRegistry() {

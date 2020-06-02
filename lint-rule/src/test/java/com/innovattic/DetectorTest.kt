@@ -2,7 +2,7 @@ package com.innovattic
 
 import com.android.tools.lint.checks.infrastructure.TestFile
 import com.android.tools.lint.checks.infrastructure.TestLintTask.lint
-import com.innovattic.IssueRegistry.Companion.MultipleSyntheticImportIssue
+import com.innovattic.lint.multiplesyntheticimport.IssueRegistry.Companion.MultipleSyntheticImportIssue
 import com.innovattic.TestFiles.MULTIPLE_SYNTHETIC_IMPORT_CLASS
 import com.innovattic.TestFiles.SINGLE_SYNTHETIC_IMPORT_CLASS
 import org.junit.Test
