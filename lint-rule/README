@@ -1,0 +1,2 @@
+This must be a pure Kotlin project for performing the lint check. It cannot be an Android library.
+https://github.com/googlesamples/android-custom-lint-rules

@@ -17,10 +17,11 @@ class MultipleSyntheticImportDetector : Detector(), SourceCodeScanner {
 
         override fun visitImportStatement(node: UImportStatement) {
             node.importReference?.let { importReference ->
-                val matches = syntheticImportRegex.find(importReference.asSourceString())
-                if (matches != null) {
-                    val (layout) = matches.destructured
-                    syntheticLayouts.add(layout)
+                val importSource = importReference.asSourceString()
+                if (importSource.startsWith(SYNTHETIC_IMPORT_PATTERN)) {
+                    val viewImport = importSource.substring(SYNTHETIC_IMPORT_PATTERN.length)
+                    val layoutName = viewImport.split('.').first()
+                    syntheticLayouts.add(layoutName)
 
                     if (syntheticLayouts.size > 1) {
                         context.report(
@@ -45,11 +46,8 @@ class MultipleSyntheticImportDetector : Detector(), SourceCodeScanner {
          * So 'kotlinx.android.synthetic.main.layout.*' becomes 'kotlinx.android.synthetic.main.layout'
          * When using specific imports, everything is kept:
          * 'kotlinx.android.synthetic.main.layout.view'
-         *
-         * This regex matches both cases
          */
-        private const val SYNTHETIC_IMPORT_PATTERN = """kotlinx\.android\.synthetic\.main\.(.+?)(?:\..*|$)"""
-        private val syntheticImportRegex = SYNTHETIC_IMPORT_PATTERN.toRegex()
+        private const val SYNTHETIC_IMPORT_PATTERN = "kotlinx.android.synthetic.main."
         const val MULTIPLE_SYNTHETIC_IMPORT_MESSAGE = "You should only have 1 synthetic import in each file. Having more than 1 synthetic import in a file is usually a mistake. If not a mistake, it is in any case confusing and therefore discouraged."
     }
 }

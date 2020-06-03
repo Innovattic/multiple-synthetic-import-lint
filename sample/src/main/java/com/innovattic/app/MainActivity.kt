@@ -8,7 +8,6 @@ import kotlinx.android.synthetic.main.activity_main_2.textView3
 import kotlinx.android.synthetic.main.activity_main_2.textView4
 import kotlinx.android.synthetic.main.activity_main_3.*
 
-
 class MainActivity : AppCompatActivity(R.layout.activity_main_1) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
