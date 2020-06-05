@@ -27,4 +27,4 @@ If you still need to import multiple synthetic imports in a single file, you can
 
 # Usage
 Use via Jitpack:
-TODO: Link to new Innovattic Jitpack link
+https://jitpack.io/#Innovattic/multiple-synthetic-import-lint
