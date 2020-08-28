@@ -1,6 +1,6 @@
 # Multiple Synthetic Import Lint
 
-A lint check to ensure each file contains at most 1 kotlinx.android.synthetic import
+A lint check to ensure each file contains at most 1 kotlinx.android.synthetic import.
 
 # The problem
 It is fairly easy to import synthetic extensions for the wrong layout file,
